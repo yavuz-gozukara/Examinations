@@ -1,23 +1,27 @@
 // This is about a union
-
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
 
 union bilgi{
-    int yas;
-    char isim[20];
-    char soyisim[20];
+    int cikistarihi;
+    char filmismi[30];
+    char senaristismi[20];
 };
 
-int main(){
+int main(void){
     union bilgi veri;
-    veri.yas = 36;
-    strcpy(veri.isim,"akif");
-    strcpy(veri.soyisim,"cifci");  
-    printf("%d",veri.yas);
-    printf("%s",veri.isim);
-    printf("%s",veri.soyisim);
+    printf("cikis tarihi:\n");
+    veri.cikistarihi = 2022;
+     printf("cikistarihi ismi:\n");
+    strcpy(veri.filmismi,"avatar");
+    printf("senarist ismi:\n");
+    strcpy(veri.senaristismi,"james");  
+   
+    printf("%d",veri.cikistarihi);
+    printf("%s",veri.filmismi);
+    printf("%s",veri.senaristismi);
+  
+    
     return 0;
 }
-
